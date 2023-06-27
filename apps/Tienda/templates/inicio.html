@@ -1,0 +1,351 @@
+{% extends './base.html' %}
+{% load static %}
+
+
+{% block head %}
+
+{% endblock %}
+
+{% block title %} Inicio {% endblock %}
+
+{% block body %}
+
+<!-- carousel -->
+<div class="banner-de-img">
+    <div id="carouselExampleCaptions" class="carousel slide">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="{% static 'img/Anya.jpg' %}" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Planners</h5>
+            <p>Organiza tus tiempos con nuestros planners.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'img/Conan.jpg' %}" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Calendarios</h5>
+            <p>Para que nunca te pierdas una fecha importante, revisa nuestros calendarios.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'img/M.zenitsu.jpg' %}" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Marca páginas</h5>
+            <p>No pierdas tu últimas página de lectura con nuestos marca páginas.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+
+
+<!-- Reloj y clima -->
+  <section class="d-flex flex-column justify-content-center align-items-center pt-0.1  text-center w-50 m-auto">
+    <div class="container-reloj pt-5">
+      <h2 class="p-3 border-top border-3">Zona horaria de Santiago (GMT-4)</h2>
+      <h1 id="time">00:00:00</h1>
+      <p id="date">date</p>
+    </div>
+  </section>
+  
+  <div class="clima-card bg-danger-subtle">
+    <h1 class="fs-2">Clima en Santiago</h1>
+    <p class="item-clima" id="description"></p>
+    <p class="item-clima" id="temp"></p>
+    <p class="item-clima" id="humidity"></p>
+    <img id="iconClima" class="iconClima" src="" alt="">
+  </div>
+
+
+ <!--  acerca de nosotros -->
+
+ <section class="d-flex flex-column justify-content-center align-items-center pt-3  text-center w-50 m-auto">
+    <h1 class="p-3 fs-2 border-top border-3">
+      CREATIVAMENTE
+    </h1>
+    <p>Somos una tienda de papelería que nos encargamos de que tus productos sean únicos y con la calidad que te mereces</p>
+    
+  </section>
+
+
+
+  <!-- agenda tu pedido -->
+
+  <div class="container bg-danger-subtle">
+    <section class="d-flex flex-column justify-content-center align-items-center pt-5  text-center w-50 m-auto">
+      <h1 class="p-3 fs-2 border-top border-3">
+        Agenda tu pedido 
+      </h1>
+      <p>Inicia sesión para agendar tu pedido</p>
+      
+      <a href="IniciarSesion.html"> <button type="button" class="btn btn-outline-secondary">Iniciar sesión</button></a>
+      <div class="mb-3">
+  
+      <p class="mt-2">Indica que producto quieres</p>    
+  <!-- Example split danger button -->
+  <div class="combo-box-pedido btn-group">
+    <button type="button" class="btn btn-outline-secondary">Seleccionar</button>
+    <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+      <span class="visually-hidden">Toggle Dropdown</span>
+    </button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Cuaderno</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item" href="#">Planner</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item" href="#">Calendario</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item" href="#">Taquitos de notas</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item" href="#">Marca página</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item" href="#">Separated link</a></li>
+    </ul>
+  </div>
+  
+        
+        <label for="formFileMultiple" class="form-label"></label>
+        <input class="form-control" type="file" id="formFileMultiple" multiple>
+  
+        
+  
+      </div>
+       
+    </section>
+  </div>
+
+
+<!-- novedades -->
+
+<section class="d-flex flex-column justify-content-center align-items-center pt-5  text-center w-50 m-auto">
+    <h1>Novedades</h1>
+    
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card" style="width: 18rem;">
+          <img src="{% static 'img/Inosuke.jpg' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Cuaderno Inosuke</h5>
+            <p class="card-text"></p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">$5.000</li>
+            <li class="list-group-item">Cuaderno tapa dura con hojas cuadriculadas</li>
+            <li class="list-group-item">Tamaño Medio Oficio</li>
+          </ul>
+          <div class="card-body">
+            <a href="#" class="card-link">Comprar</a>
+            <a href="#" class="card-link">Añadir al carrito</a>
+          </div>
+        </div>
+      </div>
+    
+      <div class="col-md-6">
+        <div class="card" style="width: 18rem;">
+          <img src="{% static 'img/One piece.jpg' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Cuaderno Luffy</h5>
+            <p class="card-text"></p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">$5.000</li>
+            <li class="list-group-item">Cuaderno cuadriculado tapa dura con hojas cuadriculadas</li>
+            <li class="list-group-item">Tamaño Medio Oficio</li>
+          </ul>
+          <div class="card-body">
+            <a href="#" class="card-link">Comprar</a>
+            <a href="#" class="card-link">Añadir al carrito</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+
+    <!-- cards de taquitos -->
+
+    <section class="taquitos-card d-flex flex-column justify-content-center align-items-center pt-5 text-center w-80 m-auto">
+        <div class="container-fluid bg-danger-subtle">
+          <h1 class="p-3 fs-2 border-top border-3">
+            Tacos de notas
+          </h1>
+          <p>Escribe tus notas con taquitos a tu gusto</p>
+          
+          <div id="carouselExampleSlidesOnly" class="carousel slide " data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="2000">
+                <div class="cards-swrapper pb-5">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{% static 'img/taquitos1.jpg' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <p class="card-text">$3.000</p>
+                          <a href="#" class="card-link">Comprar</a>
+                          <a href="#" class="card-link">Añadir al carrito</a>
+                        </div>
+                      </div>
+          
+                      <div class="card" style="width: 18rem;">
+                        <img src="{% static 'img/taquitos2.jpg' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                           <p class="card-text">$3.000</p>
+                          <a href="#" class="card-link">Comprar</a>
+                          <a href="#" class="card-link">Añadir al carrito</a>
+                        </div>
+                      </div>
+          
+                      <div class="card" style="width: 18rem;">
+                        <img src="{% static 'img/taquitos 7.jpg' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <p class="card-text">$3.000</p>
+                          <a href="#" class="card-link">Comprar</a>
+                          <a href="#" class="card-link">Añadir al carrito</a>
+                        </div>
+                      </div>
+                </div>
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                 <div class="cards-swrapper pb-5">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{% static 'img/taquitos 4.jpg' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <p class="card-text">$3.000</p>
+                          <a href="#" class="card-link">Comprar</a>
+                          <a href="#" class="card-link">Añadir al carrito</a>
+                        </div>
+                      </div>
+          
+                      <div class="card" style="width: 18rem;">
+                        <img src="{% static 'img/taquitos 5.jpg' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <p class="card-text">$3.000</p>
+                          <a href="#" class="card-link">Comprar</a>
+                          <a href="#" class="card-link">Añadir al carrito</a>
+                        </div>
+                      </div>
+          
+                      <div class="card" style="width: 18rem;">
+                        <img src="{% static 'img/taquitos 6.jpg' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <p class="card-text">$3.000</p>
+                          <a href="#" class="card-link">Comprar</a>
+                          <a href="#" class="card-link">Añadir al carrito</a>
+                        </div>
+                      </div>
+                 </div>   
+          
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <div class="cards-swrapper pb-5">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{% static 'img/taquitos 8.jpg' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <p class="card-text">$3.000</p>
+                          <a href="#" class="card-link">Comprar</a>
+                          <a href="#" class="card-link">Añadir al carrito</a>
+                        </div>
+                      </div>
+          
+                      <div class="card" style="width: 18rem;">
+                        <img src="{% static 'img/taquitos 9.jpg' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <p class="card-text">$3.000</p>
+                          <a href="#" class="card-link">Comprar</a>
+                          <a href="#" class="card-link">Añadir al carrito</a>
+                        </div>
+                      </div>
+          
+                      <div class="card" style="width: 18rem;">
+                        <img src="{% static 'img/taquito 10.jpg' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <p class="card-text">$3.000</p>
+                          <a href="#" class="card-link">Comprar</a>
+                          <a href="#" class="card-link">Añadir al carrito</a>
+                        </div>
+                      </div>
+                </div>
+          
+              </div>
+            </div>
+          </div>
+        </div>
+        </section>
+
+
+    <!-- footer    --> 
+
+    <div class="footer container-fluid text-white mt-5 py-5 px-sm-3 px-md-5">
+        <div class="row pt-5">
+            <div class="col-lg-4 col-md-6 mb-5">
+                <h1 class="mb-3 display-5 text-capitalize text-white">
+                    <img src="{% static 'img/creativamente.png' %}" alt="Logo" width="60" height="60" class="d-inline-block  fs-1 align-text-center">
+                    <span class="text-danger">Creativa</span>mente</h1>
+                <p class="m-0">Hacemos envíos a todo chile a través de:</p>
+                <img class="img-ql mt-3 d-flex justify-content-center" src="{% static 'img/envíos.png' %}" alt="" height="70px" width="220px ">
+      
+                
+            </div>
+            <div class="col-lg-8 col-md-6">
+                <div class="row">
+                    <div class="col-md-4 mb-5">
+                        <h5 class="text-white mb-4">Contactenos</h5>
+                        <div class=" d-flex justify-content-start mt-4 flex-column">
+                          <a class="text-white" href="https://mail.google.com/mail/u/0/#inbox">Correo <span class="mx-5">      </span><img class="rounded-5" src="{% static 'img/gmail.jpg' %}" alt="" height="45px" width="45px"></a>
+                          <hr>
+                          <a class="text-white" href="https://www.instagram.com/creativamentepapeleria/">Instagram <span class="mx-5">  </span><img  src="{% static 'img/ig.png' %}" alt="" height="45px" width="45px"></a>
+                            <hr>
+                            <a class="text-white" href="https://web.whatsapp.com/">whatsapp <span class="mx-5"> </span><img  src="{% static 'img/wsp.png' %}" alt="" height="45px" width="45px"> </a>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-4 mb-5">
+                        <h5 class="text-primary mb-4">Mapa de sitio</h5>
+                        <div class="d-flex flex-column justify-content-start">
+                            <a class="text-white mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                            <a class="text-white mb-2" href="servicios.html"><i class="fa fa-angle-right mr-2"></i>Servicios</a>
+                            <a class="text-white mb-2" href="informacion.html"><i class="fa fa-angle-right mr-2"></i>Informacion</a>
+                            <a class="text-white mb-2" href="login.html"><i class="fa fa-angle-right mr-2"></i>login</a>
+                            <a class="text-white" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contac</a>
+                        </div>
+                    </div> -->
+                    <!-- <div class="col-md-4 mb-5">
+                        <h5 class="text-primary mb-4">Ingresa a nuestra pagina ;)</h5>
+                        <form action="">
+                            <div class="form-group">
+                                <input type="text" class="form-control border-0" placeholder="Inscribe tu nombre" required="required" />
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control border-0" placeholder="Ingresa tu correo" required="required" />
+                            </div>
+                            <div>
+                              <button type="button" class="btn btn-outline-danger mt-3">Ingresa</button>
+                            </div>
+                        </form>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+      </div>
+{% endblock %}
+
+
+
+
+
+{% block script %}
+
+<script src="{% static 'js/function.js' %}"></script>
+<script src="{% static 'js/clima.js' %}"></script>
+{% endblock %}

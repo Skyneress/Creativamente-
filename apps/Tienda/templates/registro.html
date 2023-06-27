@@ -1,0 +1,63 @@
+{% extends './base.html' %}
+{% load static %}
+
+
+{% block head %}
+
+{% endblock %}
+
+
+{% block body %}
+<!-- <form action="">
+    <div class="form-reg container">
+        <div class="contenedor">
+            <a href="index.html"><img class="text-center" src="{% static 'img/creativamente.png' %}" width="100px" height="100px" alt="">  </a>
+            <h1>Registro</h1>
+            <div class="item-registro">
+                <div class="form-floating mb-3">
+                    <input onblur="validarForm()" type="text" class="form-control" id="txtNombre" placeholder="Nombre y Apellido">
+                    <label for="txtNombre">Nombre y apellido</label>
+                    <small id="valNombre" >Coloque su nombre completo.</small>
+                  </div>
+            </div>
+            <div class="item-registro ">
+                <div class="form-floating mb-3">
+                    <input onblur="validarForm()" type="email" class="form-control" id="txtEmail" placeholder="nombre@ejemplo.com">
+                    <label for="txtEmail">Correo</label>
+                    <small id="valEmail">Ingrese un correo valido.</small>
+                  </div>
+            </div>
+            <div class="item-registro">
+                <div class="form-floating">
+                    <input onblur="validarForm()" type="password" class="form-control" id="txtPass" placeholder="Password">
+                    <label for="txtEmail">Contraseña</label>
+                    <small id="valPass">Ingrese una contraseña más larga.</small>
+                  </div>
+            </div>
+            <button type="button" class="btn btn-outline-secondary mt-3">Registrarse</button>
+        </div>
+    </div>
+</form> -->
+
+{{error}}
+
+<div class="container">
+<div class="contenedor">
+    <form action="" method="POST"> 
+        {% csrf_token %}
+        {{form.as_p}}
+    
+        <button type="button" class="btn btn-primary">Registrar</button>
+      </form>
+
+</div>
+
+</div>
+
+{% endblock %}
+
+
+
+{% block script %}
+<script src="{% static 'js/valRegistro.js' %}"></script>
+{% endblock %}

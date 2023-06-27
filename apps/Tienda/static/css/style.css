@@ -1,0 +1,121 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+body{
+    font-family: 'Righteous', cursive;
+    
+
+}
+
+/* .carousel img{
+    height: 500px;
+
+} */
+
+.section {
+    margin-top: 170px;
+}
+
+.Titulo {
+    background: #ddd6f3;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #faaca8, #ddd6f3);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #faaca8, #ddd6f3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+font-size: 75px;
+}
+
+
+.card {
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+.combo-box-pedido {
+    margin-top: 1px;
+    margin-bottom: 50px;
+}
+
+.banner-de-img img{
+    height: 500px;
+}
+
+.cards-swrapper {
+    display: flex; 
+    justify-content: center;   
+}
+
+.container-reloj {
+    text-align: center;
+    ;
+}
+
+.container-reloj h1 {
+    font-size: 55px;
+    font-weight: 400;
+}
+
+.container-reloj p {
+    font-size: 25px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+.container-reloj h2{
+    font-size: 13px;
+}
+
+
+.labelC {
+    margin-right: 50px;
+}
+
+.img-header{
+    margin-left: 500px;
+}
+
+small {
+    color: rgb(230, 30, 23);
+}
+
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    width: 350px;
+    align-items: center;
+    justify-content: center;
+    background-color: azure;
+    margin-top: 100px;
+    border-radius: 10px;
+}
+
+.form-reg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+ 
+
+.clima-card {
+    background-color: #fff;
+    box-shadow: 0 4px 16px 0 rgba(0,0,0,0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.footer {
+background-color: rgb(177, 110, 140);
+}
+
+.img-ql {
+
+    margin-left: 50px;
+}
+
+.error {
+    color: red;
+}
+

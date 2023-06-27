@@ -1,0 +1,56 @@
+{% extends './base.html' %}
+{% load static %}
+
+{% block head %}
+
+{% endblock %}
+
+
+{% block body %}
+<div class="Titulo container-fluid">
+    Cuadernos
+</div>
+
+<!--CAROUSEL CUADERNO-->
+
+<div class="banner-de-img">
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="950">
+        <img src="{% static 'img/c.gojo1.jpg' %}" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item" data-bs-interval="950">
+        <img src="{% static 'img/c.tuna.jpg' %}" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item" data-bs-interval="950">
+        <img src="{% static 'img/c.hinata.jpg' %}" class="d-block w-100" alt="...">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container text-center mt-5">
+    <h1>Nuestros productos</h1>
+  <div class="row mt-5">
+    {% for p in cuadernos %}
+    <div class="col-sm-12 col-md-4 ">
+      <div class="item-card col-lg-4">
+        <div class="card" style="width: 18rem;">
+            <img src="{{p.imagen.url}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{p.nombre_producto}}</h5>
+              <p class="card-text">$ {{p.precio_producto}}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Cantidad: {{p.cantidad_producto}}</li>
+            </ul>
+            <div class="card-body">
+              <a href="#" class="card-link">Comprar</a>
+              <a href="#" class="card-link">Añadir al carrito</a>
+            </div>
+          </div>
+    </div>
+    </div>
+    {% endfor %}
+{% endblock %}

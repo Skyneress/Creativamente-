@@ -1,0 +1,104 @@
+{% extends './base.html' %}
+{% load static %}
+
+{% block head %}
+
+{% endblock %}
+
+
+{% block body %}
+
+<div class="container mt-5 mb-5">
+    <h2 class="mb-5">Agregar producto</h2>
+    <form id="formProductoAgregar" action="/agregar" method="POST" enctype="multipart/form-data"> {% csrf_token %}
+        <div class="row">
+            <div class="col-md-4">
+                <label for="txtSku">SKU:</label>
+                <input name="txtSku" id="txtSku" type="text" class="form-control">
+            </div>
+            
+
+            <div class="col-md-8">
+                <label for="txtNombre">Nombre:</label>
+                <input name="txtNombre" id="txtNombre" type="text" class="form-control">
+            </div>
+
+
+            <div class="col-md-4">
+                <label for="txtPrecio">Precio:</label>
+                <input name="txtPrecio" id="txtPrecio" type="text" class="form-control">
+            </div>
+
+
+            <div class="col-md-4">
+                <label for="cmbCategoria">Categoria:</label>
+                <select  id="cmbCategoria" name="cmbCategoria" class="form-select" aria-label="Default select example">
+                    <option id="cmbCategoria" disabled selected value="null">Seleccione</option>
+                    {% for c in categ %}
+                    <option id="cmbCategoria" value="{{c.id_categoria}}">{{c.nombre_categoria}}</option>
+                    {% endfor %}
+                  </select>
+            </div>
+
+
+            <div class="col-md-4">
+                <label for="txtStock">Cantidad:</label>
+                <input name="txtStock" id="txtStock" type="text" class="form-control">
+            </div>
+
+            <div class="col-md-12">
+                <label for="txtImg">Imagen URL:</label>
+                <input name="txtImg" id="txtImg" type="file" class="form-control">
+            </div>
+        </div>
+        <button class="btn btn-success mt-3">Agregar producto</button>
+    </form>
+
+
+
+
+    <table class="table mt-5">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">Imagen</th>
+            <th scope="col">Opciones</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for i in produc %}
+          <tr>
+            <th scope="row">{{i.id_producto}}</th>
+            <td>{{i.nombre_producto}}</td>
+            <td>{{i.precio_producto}}</td>
+            <td>{{i.cantidad_producto}}</td>
+            <td>{{i.categoria_id}}</td>
+            <td><img src="{{i.imagen.url}}" alt="" height="50px"></td>
+            <td>
+                <a href="/editarFormulario/{{i.id_producto}}" class="btn btn-primary">Editar</a>
+            </td>
+            <td>
+                <a href="/eliminar/{{i.id_producto}}" class="btn btn-danger">Eliminar</a>
+            </td>
+            
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+
+
+
+</div>
+
+{% endblock %}
+
+
+{% block script %}
+<!-- <script src="{% static 'js/valFormulario.js' %}"></script> -->
+<script src="{% static 'js/submitFormulario.js' %}"></script>
+{% endblock %}
